@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="js/bundle.js"></script>
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="chore in chores">{{ chore.name  }} - {{ chore.priority}}</li>
+      </ul>
+      <form v-on:submit.prevent="saveNewItem">
+        <label for="new-item">Add a New Item:</label>
+        <input id="new-item" type="text" v-model="newItem"/>
+        <label for="new-item">Priority:</label>
+        <input id="new-item" type="text" v-model="priority"/>
+        <input type="submit" value="Save New Item"/>
+      </form>
+    </div>
+  </body>
+</html>
